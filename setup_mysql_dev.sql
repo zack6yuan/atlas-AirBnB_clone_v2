@@ -1,4 +1,4 @@
--- Creates a new database for the project.
+-- Creates a new database.
 -- Creates a new user in localhost and sets password.
 -- Set privileges on the database.
 CREATE DATABASE IF NOT EXISTS hbnb_dev_db;
