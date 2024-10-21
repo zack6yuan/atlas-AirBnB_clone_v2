@@ -121,6 +121,25 @@ class HBNBCommand(cmd.Cmd):
         elif args not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
+        else:
+            params = {}
+            for param in args[1:]:
+                if "=" not in param:
+                    continue
+                key, value = param.split("=", 1)
+                if value.startswith('"') and value.endswith('"'):
+                    value = value[1:-1]
+                    value = value.replace('_', ' ').replace('\\"', '"')
+                elif '.' in value:
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        continue
+                else:
+                    try:
+                        value = int(value)
+                    except ValueError:
+                        continue
         new_instance = HBNBCommand.classes[args]()
         storage.save()
         print(new_instance.id)
@@ -129,7 +148,13 @@ class HBNBCommand(cmd.Cmd):
     def help_create(self):
         """ Help information for the create method """
         print("Creates a class of any type")
-        print("[Usage]: create <className>\n")
+        print("[Usage]: create <className> <param 1> <param 2> <param 3>...\n")
+        print("[Parameter Syntax]: <key>=<value>")
+        print("Strings must be enclosed in double quotes: \"")
+        print("double quotes intended to be part of the value must be escaped by preceding them with a backslash: \\")
+        print("Underscores (_) in strings will be replaced with spaces")
+        print("Floats are formatted as <whole>.<decimal>")
+        print("Integers are formatted as <number>")
 
     def do_show(self, args):
         """ Method to show an individual object """
