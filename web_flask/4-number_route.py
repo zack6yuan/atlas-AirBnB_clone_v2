@@ -29,7 +29,7 @@ def python(text="is cool"):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-        return ("{} is a number".format(n))
+    return ("{} is a number".format(n))
 # Error - the converter n does not exist.
 
 
