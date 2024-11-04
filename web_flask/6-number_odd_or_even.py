@@ -23,7 +23,11 @@ def display(text):
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
+<<<<<<< HEAD
 def python(text="is cool")
+=======
+def python(text="is cool"):
+>>>>>>> 16cf3566043d00b455a17824fbe325577649a514
     return ("Python {}".format(text.replace("_", " ")))
 
 
@@ -34,9 +38,18 @@ def number(n):
 
 @app.route('/number_template/<n>', strict_slashes=False)
 def template(n):
+<<<<<<< HEAD
     return render_template('5-number.html', n=n)
 
 
 @app.route('/number_odd_or_even/<n>', strict_slashes=False)
 def template(n):
     return render_template('6-number_odd_or_even.html', n=n)
+=======
+    return render_template("5-number.html", number=n)
+
+
+@app.route('/number_odd_or_even/<n>', strict_slashes=False)
+def oddoreven_template(n):
+    return render_template("6-number.html", number=n)
+>>>>>>> 16cf3566043d00b455a17824fbe325577649a514
