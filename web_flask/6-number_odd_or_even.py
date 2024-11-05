@@ -33,12 +33,12 @@ def number(n):
 
 
 @app.route('/number_template/<n>', strict_slashes=False)
-def template(n):
+def five_template(n):
     return render_template('5-number.html', n=n)
 
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
-def template(n):
+def six_template(n):
     return render_template('6-number_odd_or_even.html', n=n)
 
 
