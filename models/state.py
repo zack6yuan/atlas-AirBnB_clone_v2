@@ -23,7 +23,6 @@ class State(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     if models.storage_t != "db":
-        
         @property
         def cities(self):
             """getter for list of city instances related to the state"""
@@ -33,4 +32,3 @@ class State(BaseModel, Base):
                 if city.state_id == self.id:
                     city_list.append(city)
             return city_list
-    cites = []
