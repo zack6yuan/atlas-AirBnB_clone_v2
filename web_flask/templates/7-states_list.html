@@ -7,6 +7,7 @@
         <H1>States</H1>
         <UL>
             <!--Iterate through states-->
-            {% for state in states %}
-            <LI></LI>
+            {%for state in states%}
+            <LI>{{state.id}}: <B>{{state.name}}</B></LI>
+            {%endfor%}
         </UL>
