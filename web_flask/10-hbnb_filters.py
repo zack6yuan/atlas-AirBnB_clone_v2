@@ -19,4 +19,9 @@ def display():
 
 @app.teardown_appcontext
 def teardown():
+    """ Method: Remove the current SQLAlchemy session """
     storage.close()
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

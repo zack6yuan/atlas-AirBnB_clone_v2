@@ -14,7 +14,15 @@ def teardown():
     storage.close()
 
 
-@app.route('/hbnb_filters', strict_slashes=False)
+@app.route('/states', strict_slashes=False)
+def states():
+    return render_template("9-states.html", states=states)
  
 
 @app.route('/states/<id>', strict_slashes=False)
+def states_id():
+    return render_template("9-states.html", states=states)
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

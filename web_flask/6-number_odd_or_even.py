@@ -29,7 +29,10 @@ def python(text="is cool"):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    return ("{} is a number".format(n))
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+    else:
+        return ("{} is a number".format(n))
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
