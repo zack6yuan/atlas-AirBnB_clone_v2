@@ -39,7 +39,11 @@ def five_template(n):
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def six_template(n):
-    return render_template('6-number_odd_or_even.html', n=n)
+    if n % 2 != 0:
+        modulus = 'odd'
+    else:
+        modulus = 'even'
+    return render_template('6-number_odd_or_even.html', n=n, parity=parity)
 
 
 if __name__ == "__main__":
