@@ -43,7 +43,7 @@ def six_template(n):
         modulus = 'odd'
     else:
         modulus = 'even'
-    return render_template('6-number_odd_or_even.html', n=n, modulus=modulus)
+    return render_template('6-number_odd_or_even.html', number=n, modulus=modulus)
 
 
 if __name__ == "__main__":
