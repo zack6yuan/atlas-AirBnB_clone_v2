@@ -5,17 +5,17 @@ from flask import Flask
 
 app = Flask(__name__)
 
-
+""" Root route """
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
     return ("Hello HBNB!")
 
-
+""" HBNB route """
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     return ("HBNB")
 
-
+""" Dynamic route - captures value from URL """
 @app.route("/c/<text>", strict_slashes=False)
 def display(text):
     return ("C {}".format(text.replace("_", " ")))
