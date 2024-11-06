@@ -19,6 +19,7 @@ def display():
 
 @app.teardown_appcontext
 def teardown():
+    """ Method: Remove the current SQLAlchemy session """
     storage.close()
 
 
