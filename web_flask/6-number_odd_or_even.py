@@ -29,10 +29,7 @@ def python(text="is cool"):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
-    else:
-        return ("{} is a number".format(n))
+    return ("{} is a number".format(n))
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
@@ -42,7 +39,7 @@ def five_template(n):
 
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def six_template(n):
-    return render_template('6-number_odd_or_even.html', number=n)
+    return render_template('6-number_odd_or_even.html', n=n)
 
 
 if __name__ == "__main__":
