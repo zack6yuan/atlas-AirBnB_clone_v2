@@ -9,7 +9,7 @@ app = Flask(__name__)
 """ Root route """
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """ Method: Display text to the user """
+    """ Method: Display "Hello HBNB!" to the user """
     return ("Hello HBNB!")
 
 
