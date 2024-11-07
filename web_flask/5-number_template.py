@@ -38,6 +38,7 @@ def python(text="is cool"):
 """ Dynamic route - captures value from URL """
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
+    """ Method: Display HTML page if n is type "int" """
     if not isinstance(n, int):
         raise TypeError("n must be an integer")
     else:
@@ -47,7 +48,11 @@ def number(n):
 """ Dynamic route - captures value from URL """
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def template(n):
-    return render_template('5-number.html', number=n)
+    """ Method: Display HTML page if n is type "int" """
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+    else:
+        return render_template('5-number.html', number=n)
 
 
 """ Method: Start Flask web server"""
