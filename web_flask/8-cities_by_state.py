@@ -8,17 +8,21 @@ from models.state import State
 app = Flask(__name__)
 
 
+""" TearDown """
 @app.teardown_appcontext
 def teardown():
     """ Method: Remove the current SQLAlchemy session """
     storage.close()
 
 
+""" States list route """
 @app.route('/cities_by_states', strict_slashes=False)
 def states_list():
+    """ Method: Sort all state objects """
     states = storage.all(State).values()
     return render_template("8-cities_by_states.html", states=states)
 
 
+""" Method: Start Flask web server """
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

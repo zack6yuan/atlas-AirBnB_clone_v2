@@ -16,7 +16,7 @@ def hello_hbnb():
 """ HBNB route """
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
-    """ Method: Display "HBNB!" to the user """
+    """ Method: Display "HBNB" to the user """
     return ("HBNB")
 
 
@@ -38,10 +38,7 @@ def python(text="is cool"):
 """ Dynamic route - captures value from URL """
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
-    """ Method: Display HTML page if n is type "int" """
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
-    else:
+    """ Method: Return n "is a number" if n is type int """
         return ("{} is a number".format(n))
 
 
@@ -49,9 +46,6 @@ def number(n):
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def template(n):
     """ Method: Display HTML page if n is type "int" """
-    if not isinstance(n, int):
-        raise TypeError("n must be an integer")
-    else:
         return render_template('5-number.html', number=n)
 
 
