@@ -28,7 +28,7 @@
 	line-height: 20px;
 }
 
-.popover { /* add method to allow scrolling in popover */
+.popover {
 	list-style-type: none;
 	display: none;
 	background-color: #FAFAFA;
@@ -39,6 +39,7 @@
 	padding: 25px 0px;
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
+	overflow-y: scroll;
 }
 
 .locations:hover .popover {
