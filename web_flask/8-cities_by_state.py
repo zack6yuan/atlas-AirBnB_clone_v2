@@ -17,7 +17,7 @@ def teardown():
 
 """ States list route """
 @app.route('/cities_by_states', strict_slashes=False)
-def states_list():
+def cities_by_state():
     """ Method: Sort all state objects """
     states = storage.all(State).values()
     return render_template("8-cities_by_states.html", states=states)
