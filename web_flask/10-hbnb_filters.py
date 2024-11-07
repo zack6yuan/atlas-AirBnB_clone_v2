@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 """ HBNB filters route """
 @app.route('/hbnb_filters', strict_slashes=False)
-def display():
+def hbnb_filters():
     state = storage.all(State).values()
     amenity = storage.all(State).values()
     return render_template("10-hbnb_filters.html", state=state, amenity=amenity)
