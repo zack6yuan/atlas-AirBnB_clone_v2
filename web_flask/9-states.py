@@ -23,6 +23,7 @@ def states():
     return render_template("9-states.html", states=states)
  
 
+""" States id route """
 @app.route('/states/<id>', strict_slashes=False)
 def states_id():
     """ Method: display an HTML page inside the tag BODY """
